@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_ubicacion"
+            android:icon="@drawable/ubic"
+            android:title="Ubicacion" />
+        <item
+            android:id="@+id/nav_agendar"
+            android:icon="@drawable/calagregar"
+            android:title="Agendar Cita" />
+        <item
+            android:id="@+id/nav_canselar"
+            android:icon="@drawable/calcanselar"
+            android:title="Canselar Cita" />
+        <item
+            android:id="@+id/nav_promociones"
+            android:icon="@drawable/ddes"
+            android:title="Promociones" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+
+        </menu>
+    </item>
+
+</menu>
