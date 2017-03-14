@@ -11,9 +11,9 @@
             android:icon="@drawable/calagregar"
             android:title="Agendar Cita" />
         <item
-            android:id="@+id/nav_canselar"
+            android:id="@+id/nav_cancelar"
             android:icon="@drawable/calcanselar"
-            android:title="Canselar Cita" />
+            android:title="Cancelar Cita" />
         <item
             android:id="@+id/nav_promociones"
             android:icon="@drawable/ddes"
