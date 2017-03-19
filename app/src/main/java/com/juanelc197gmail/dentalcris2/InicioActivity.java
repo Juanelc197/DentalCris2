@@ -1,5 +1,6 @@
 package com.juanelc197gmail.dentalcris2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -63,21 +64,37 @@ public class InicioActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        boolean FragmentTransaction = false;
+        android.support.v4.app.Fragment fragment = null;
+
+        //FragmentManager fragmentManager = getSupportFragmentManager();
+
 
         if (id == R.id.nav_ubicacion) {
             // Handle the camera action
 
-            fragmentManager.beginTransaction().replace(R.id.content_inicio, new UbicacionFragment()).commit();
+            Intent i = new Intent(this, UbicacionActivity.class);
+            startActivity(i);
+
+            //fragmentManager.beginTransaction().replace(R.id.content_inicio, new UbicacionFragment()).commit();
 
         } else if (id == R.id.nav_agendar) {
-            fragmentManager.beginTransaction().replace(R.id.content_inicio, new AgendarFragment()).commit();
+            //fragmentManager.beginTransaction().replace(R.id.content_inicio, new AgendarFragment()).commit();
+
+            Intent i = new Intent(this, AgendarActivity.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_cancelar) {
-            fragmentManager.beginTransaction().replace(R.id.content_inicio, new CancelarFragment()).commit();
+            //fragmentManager.beginTransaction().replace(R.id.content_inicio, new CancelarFragment()).commit();
+
+            Intent i = new Intent(this, CancelarActivity.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_promociones) {
-            fragmentManager.beginTransaction().replace(R.id.content_inicio, new PromocionesFragment()).commit();
+            //fragmentManager.beginTransaction().replace(R.id.content_inicio, new PromocionesFragment()).commit();
+
+            Intent i = new Intent(this, PromocionesActivity.class);
+            startActivity(i);
 
 
         } else if (id == R.id.nav_share) {

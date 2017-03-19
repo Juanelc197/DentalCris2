@@ -39,7 +39,23 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".AgendarActivity"
+            android:label="Agendar Cita"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UbicacionActivity"
+            android:label="Ubicacion"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CancelarActivity"
+            android:label="Cancelar Cita"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PromocionesActivity"
+            android:label="Promociones"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
