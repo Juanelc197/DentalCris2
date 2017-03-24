@@ -1,5 +1,6 @@
 package com.juanelc197gmail.dentalcris2;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -23,6 +24,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     private Marker marcador;
+    private CameraUpdate camara;
+
     double lat = 0.0;
     double lng = 0.0;
 
@@ -49,7 +52,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        miUbicacion();
+        //miUbicacion();
+
+        //ESTABLECER TIPOS DE MAPA (HIBRIDO, NORMAL Y SATELITE)
+        //mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+
+        //ESTABLECER GPS
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        mMap.setMyLocationEnabled(true);
+
+        //Adicionamos los botones de zoom
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+
 
         // Add a marker in Sydney and move the camera
         LatLng monterrey = new LatLng(25.95, -100.2833);
@@ -57,7 +80,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLng(monterrey));
     }
 
-    private void agregarMarcador(double lat, double lng) {
+   /* private void agregarMarcador(double lat, double lng) {
         LatLng coordenadas = new LatLng(lat, lng);
         CameraUpdate miUbicacion = CameraUpdateFactory.newLatLngZoom(coordenadas, 16);
         if (marcador!=null)marcador.remove();
@@ -105,5 +128,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         actualizarUbicacion(location);
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,10000,0,locListener);
-    }
+    } */
 }
