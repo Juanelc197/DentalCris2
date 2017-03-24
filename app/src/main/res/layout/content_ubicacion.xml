@@ -8,24 +8,24 @@
     tools:context="com.juanelc197gmail.dentalcris2.UbicacionActivity"
     tools:showIn="@layout/activity_ubicacion">
 
-    <Button
+    <!-- Boton de regresar -->
+    <!-- <Button
         android:id="@+id/btn_r"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="17dp"
-        android:text="regresar" />
+        android:text="regresar" /> -->
 
     <ImageButton
         android:id="@+id/img_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_r"
-        android:layout_alignEnd="@+id/btn_r"
-        android:layout_alignRight="@+id/btn_r"
-        android:layout_marginBottom="63dp"
-        app:srcCompat="@drawable/map" />
+        app:srcCompat="@drawable/map"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp" />
 
     <TextView
         android:id="@+id/txt_1"

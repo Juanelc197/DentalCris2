@@ -6,12 +6,13 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 public class AgendarActivity extends AppCompatActivity {
 
-    private Button btn1;
+    //private Button btn1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,14 +21,22 @@ public class AgendarActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        btn1 = (Button) findViewById(R.id.btn_r);
+        if (getSupportActionBar()!=null) {
+
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
+        //Boton de regreso
+
+        /* btn1 = (Button) findViewById(R.id.btn_r);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent btn1 = new Intent (AgendarActivity.this, InicioActivity.class);
                 startActivity(btn1);
             }
-        });
+        }); */
 
 
 
@@ -39,6 +48,12 @@ public class AgendarActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         }); */
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId()==android.R.id.home)
+            finish();
+        return super.onOptionsItemSelected(item);
     }
 
 }

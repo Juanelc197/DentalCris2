@@ -6,14 +6,18 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
 public class UbicacionActivity extends AppCompatActivity {
 
-    private Button btn1;
+    //private Button btn1;
     private ImageButton imgb;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +26,22 @@ public class UbicacionActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        btn1 = (Button) findViewById(R.id.btn_r);
+     if (getSupportActionBar()!=null) {
+
+         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+         getSupportActionBar().setDisplayShowHomeEnabled(true);
+     }
+
+
+        //boton de regresar
+       /* btn1 = (Button) findViewById(R.id.btn_r);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent btn1 = new Intent (UbicacionActivity.this, InicioActivity.class);
                 startActivity(btn1);
             }
-        });
+        }); */
 
         imgb = (ImageButton) findViewById(R.id.img_btn);
 
@@ -40,6 +52,8 @@ public class UbicacionActivity extends AppCompatActivity {
             }
         });
 
+
+
        /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +62,12 @@ public class UbicacionActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         }); */
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId()==android.R.id.home)
+            finish();
+        return super.onOptionsItemSelected(item);
     }
 
 }

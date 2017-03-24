@@ -60,7 +60,8 @@
         android:layout_below="@+id/btn_3"
         android:layout_centerHorizontal="true" />
 
-    <Button
+       <!-- Boton de regreso -->
+    <!-- <Button
         android:id="@+id/btn_r"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,5 +69,5 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/btn_3"
         android:layout_marginBottom="13dp"
-        android:text="regresar" />
+        android:text="regresar" /> -->
 </RelativeLayout>

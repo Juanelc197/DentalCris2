@@ -51,7 +51,9 @@
         android:layout_marginTop="100dp"
         android:text="cancelar" />
 
-    <Button
+
+    <!-- Boton de regresar -->
+    <!-- <Button
         android:id="@+id/btn_r"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,5 +61,5 @@
         android:text="regresar"
         android:layout_below="@+id/btn_cancelar"
         android:layout_alignRight="@+id/btn_cancelar"
-        android:layout_alignEnd="@+id/btn_cancelar" />
+        android:layout_alignEnd="@+id/btn_cancelar" /> -->
 </RelativeLayout>
