@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterViewFlipper;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -16,6 +17,11 @@ public class UbicacionActivity extends AppCompatActivity {
 
     //private Button btn1;
     private ImageButton imgb;
+
+    private AdapterViewFlipper AVF;
+
+    int[] images = {R.drawable.capturauno, R.drawable.capturados, R.drawable.capturatres, R.drawable.capturacuatro, R.drawable.capturacinco, R.drawable.capturaseix, R.drawable.capturasiete};
+    String[] names = {"","","","","","",""};
 
 
 
@@ -62,6 +68,13 @@ public class UbicacionActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         }); */
+
+        AVF=(AdapterViewFlipper)findViewById(R.id.AVF);
+        CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), names, images);
+        AVF.setAdapter(customAdapter);
+        AVF.setFlipInterval(4000);
+        AVF.setAutoStart(true);
+
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
